@@ -3,7 +3,7 @@ package main
 import "github.com/charmbracelet/lipgloss"
 
 func (m model) View() string {
-	
+
 	m.uuidInput.Width = m.width - m.width/10
 	m.base64Input.Width = m.width - m.width/10
 	m.errTab.Width = m.width - m.width/10
@@ -25,7 +25,7 @@ func (m model) View() string {
 	errTabStyle := m.styles.InputField
 	errTabStyle = errTabStyle.Foreground(lipgloss.Color("#ff5555"))
 
-	instructions := lipgloss.NewStyle().Foreground(lipgloss.Color("#555555")).Padding(1,0,0,0)
+	instructions := lipgloss.NewStyle().Foreground(lipgloss.Color("#555555")).Padding(1, 0, 0, 0)
 
 	return lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Top,
 		lipgloss.JoinVertical(

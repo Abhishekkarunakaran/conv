@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/gofrs/uuid"
+	clipboard "github.com/tiagomelo/go-clipboard/clipboard"
 )
 
 func UuidToB64(uuidString string) (string, error) {
@@ -32,4 +33,17 @@ func B64ToUuid(b64String string) (string, error) {
 		return "", err
 	}
 	return u.String(), nil
+}
+
+func copyToClipboard(m *model) error {
+	c := clipboard.New()
+	switch {
+	case m.uuidInput.Focused():
+		result := m.uuidInput.Value()
+		return c.CopyText(result)
+	case m.base64Input.Focused():
+		result := m.base64Input.Value()
+		return c.CopyText(result)
+	}
+	return nil
 }
