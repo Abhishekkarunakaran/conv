@@ -1,4 +1,4 @@
-module github.com/Abhishekkarunakaran/conv
+module github.com/Abhishekkarunakaran/ub2
 
 go 1.23.4
 

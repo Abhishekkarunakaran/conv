@@ -4,7 +4,7 @@ import (
 	b64 "encoding/base64"
 	"fmt"
 
-	"github.com/Abhishekkarunakaran/conv/app/types"
+	"github.com/Abhishekkarunakaran/ub2/app/types"
 	"github.com/gofrs/uuid"
 	clipboard "github.com/tiagomelo/go-clipboard/clipboard"
 )

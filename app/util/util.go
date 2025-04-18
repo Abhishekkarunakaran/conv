@@ -1,7 +1,7 @@
 package util
 
 import (
-	"github.com/Abhishekkarunakaran/conv/app/types"
+	"github.com/Abhishekkarunakaran/ub2/app/types"
 	"github.com/charmbracelet/bubbles/textinput"
 	"github.com/charmbracelet/lipgloss"
 )

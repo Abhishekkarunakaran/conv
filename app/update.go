@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/Abhishekkarunakaran/conv/app/types"
+	"github.com/Abhishekkarunakaran/ub2/app/types"
 	tea "github.com/charmbracelet/bubbletea"
 )
 

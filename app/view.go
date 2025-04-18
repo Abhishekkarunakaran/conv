@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/Abhishekkarunakaran/conv/app/constants"
-	"github.com/Abhishekkarunakaran/conv/app/types"
+	"github.com/Abhishekkarunakaran/ub2/app/constants"
+	"github.com/Abhishekkarunakaran/ub2/app/types"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"

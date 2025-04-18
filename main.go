@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/Abhishekkarunakaran/conv/app"
+	"github.com/Abhishekkarunakaran/ub2/app"
 	tea "github.com/charmbracelet/bubbletea"
 )
 
