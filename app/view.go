@@ -20,14 +20,16 @@ func (m model) View() string {
 
 	helpStyle := lipgloss.NewStyle().Foreground(types.HelpGrey).Padding(1, 0, 0, 0)
 
-	return lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Top,
+	return lipgloss.JoinVertical(
+		lipgloss.Left,
+	lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Center,
 		lipgloss.JoinVertical(
 			lipgloss.Center,
 			m.renderField(constants.LabelUUID, m.uuidInput, true),
 			m.renderField(constants.LabelBase64, m.base64Input, true),
 			m.renderField(constants.LabelMesssage, m.msgTab, false),
-			helpStyle.Render(constants.HelpString),
-		))
+		)),
+		helpStyle.Render(constants.HelpString))
 }
 
 func (m *model) renderField(label string, field textinput.Model, isInputField bool) string {

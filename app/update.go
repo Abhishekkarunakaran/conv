@@ -32,6 +32,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.PressedArrowKeys()
 		case types.Up:
 			m.PressedArrowKeys()
+		case types.CtrlL:
+			m.ClearField()
 		}
 	}
 	// to update the inputfield

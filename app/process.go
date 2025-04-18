@@ -85,9 +85,28 @@ func (m *model) PressedArrowKeys() {
 	case m.uuidInput.Focused():
 		m.uuidInput.Blur()
 		m.base64Input.Focus()
-
+		m.messageLevel = types.Nil
+		m.msgTab.SetValue("")
 	case m.base64Input.Focused():
 		m.base64Input.Blur()
 		m.uuidInput.Focus()
+		m.messageLevel = types.Nil
+		m.msgTab.SetValue("")
+	}
+}
+
+func (m *model) ClearField() {
+	switch {
+	case m.uuidInput.Focused() && m.uuidInput.Value() != "":
+		m.uuidInput.SetValue("")
+		m.messageLevel = types.Success
+		m.msgTab.SetValue("successfully cleared!")
+	case m.base64Input.Focused() && m.base64Input.Value() != "":
+		m.base64Input.SetValue("")
+		m.messageLevel = types.Success
+		m.msgTab.SetValue("successfully cleared!")
+	default:
+		m.messageLevel = types.Warn
+		m.msgTab.SetValue("nothing to clear!")
 	}
 }

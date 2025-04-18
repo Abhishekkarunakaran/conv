@@ -14,6 +14,7 @@ var (
 	Error   Level = "error"
 	Warn    Level = "warn"
 	Success Level = "success"
+	Nil     Level = ""
 )
 
 type Key string
@@ -24,4 +25,5 @@ var (
 	CtrlP Key = "ctrl+p"
 	Down  Key = "down"
 	Up    Key = "up"
+	CtrlL Key = "ctrl+l"
 )
