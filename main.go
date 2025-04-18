@@ -1,23 +1,17 @@
 package main
 
 import (
-	b64 "encoding/base64"
-	"fmt"
-	"os"
+	"log"
 
-	"github.com/gofrs/uuid"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 func main() {
+	m := NewModel()
 
-	uuidString := os.Args[1]
-	uuid, err := uuid.FromString(uuidString)
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(0)
+	p := tea.NewProgram(m, tea.WithAltScreen())
+
+	if _, err := p.Run(); err != nil {
+		log.Fatal(err)
 	}
-
-	base64Code := b64.StdEncoding.EncodeToString(uuid.Bytes())
-	fmt.Println(base64Code)
-
 }
