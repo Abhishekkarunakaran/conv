@@ -29,9 +29,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case types.CtrlP:
 			m.CopyToClipboard()
 		case types.Down:
-			m.PressedArrowKeys()
+			m.PressedDownArrowKey()
 		case types.Up:
-			m.PressedArrowKeys()
+			m.PressedUpArrowKey()
 		case types.CtrlL:
 			m.ClearField()
 		}

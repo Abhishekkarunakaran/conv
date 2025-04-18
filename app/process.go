@@ -80,16 +80,19 @@ func (m *model) copy(stringToCopy string) {
 	m.msgTab.SetValue("copied!")
 }
 
-func (m *model) PressedArrowKeys() {
-	switch {
-	case m.uuidInput.Focused():
-		m.uuidInput.Blur()
-		m.base64Input.Focus()
-		m.messageLevel = types.Nil
-		m.msgTab.SetValue("")
-	case m.base64Input.Focused():
+func (m *model) PressedUpArrowKey() {
+	if m.base64Input.Focused(){
 		m.base64Input.Blur()
 		m.uuidInput.Focus()
+		m.messageLevel = types.Nil
+		m.msgTab.SetValue("")
+	}
+}
+
+func (m *model) PressedDownArrowKey(){
+	if m.uuidInput.Focused() {
+		m.uuidInput.Blur()
+		m.base64Input.Focus()
 		m.messageLevel = types.Nil
 		m.msgTab.SetValue("")
 	}
