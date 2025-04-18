@@ -27,7 +27,8 @@ type model struct {
 	height      int
 	uuidInput   textinput.Model
 	base64Input textinput.Model
-	errTab      textinput.Model
+	msgTab      textinput.Model
+	messageType string //error, warning, success
 	styles      *Styles
 }
 
@@ -40,12 +41,12 @@ func NewModel() model {
 	base64Input := textinput.New()
 	base64Input.CharLimit = 64
 	base64Input.Placeholder = "xxxxxxxxx"
-	errTab := textinput.New()
-	errTab.Placeholder = "error message"
+	msgTab := textinput.New()
+	msgTab.Placeholder = "Pani thudangam...!!"
 	return model{
 		uuidInput:   uuidInput,
 		base64Input: base64Input,
-		errTab:      errTab,
+		msgTab:      msgTab,
 		styles:      styles,
 	}
 }
