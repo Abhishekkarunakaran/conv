@@ -5,31 +5,45 @@ import (
 	"fmt"
 
 	"github.com/gofrs/uuid"
+	clipboard "github.com/tiagomelo/go-clipboard/clipboard"
 )
 
-func UuidToB64(uuidString string) (string, error) {
+func UuidToB64(uuidString string) (string,string,error) {
 	if uuidString == "" {
-		return "", fmt.Errorf("uuid: enter valid content")
+		return "","warning",fmt.Errorf("uuid: enter valid content")
 	}
 	uuidVal, err := uuid.FromString(uuidString)
 	if err != nil {
-		return "", err
+		return "","error", err
 	}
 	base64Code := b64.StdEncoding.EncodeToString(uuidVal.Bytes())
-	return base64Code, nil
+	return base64Code,"", nil
 }
 
-func B64ToUuid(b64String string) (string, error) {
+func B64ToUuid(b64String string) (string,string, error) {
 	if b64String == "" {
-		return "", fmt.Errorf("base64: enter valid content")
+		return "", "warning",fmt.Errorf("base64: enter valid content")
 	}
 	uuidVal, err := b64.StdEncoding.DecodeString(b64String)
 	if err != nil {
-		return "", fmt.Errorf("base64 : %w", err)
+		return "", "error", fmt.Errorf("base64 : %w", err)
 	}
 	u, err := uuid.FromBytes(uuidVal)
 	if err != nil {
-		return "", err
+		return "", "error",err
 	}
-	return u.String(), nil
+	return u.String(),"", nil
+}
+
+func copyToClipboard(m *model) error {
+	c := clipboard.New()
+	switch {
+	case m.uuidInput.Focused():
+		result := m.uuidInput.Value()
+		return c.CopyText(result)
+	case m.base64Input.Focused():
+		result := m.base64Input.Value()
+		return c.CopyText(result)
+	}
+	return nil
 }
