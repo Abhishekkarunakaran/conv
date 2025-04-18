@@ -1,0 +1,27 @@
+package types
+
+import "github.com/charmbracelet/lipgloss"
+
+type Styles struct {
+	BlurredColor lipgloss.Color
+	FocusedColor lipgloss.Color
+	InputField   lipgloss.Style
+}
+
+type Level string
+
+var (
+	Error   Level = "error"
+	Warn    Level = "warn"
+	Success Level = "success"
+)
+
+type Key string
+
+var (
+	CtrlC Key = "ctrl+c"
+	Enter Key = "enter"
+	CtrlP Key = "ctrl+p"
+	Down  Key = "down"
+	Up    Key = "up"
+)
