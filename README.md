@@ -1,4 +1,4 @@
-# ub2: A `uuid-base64` converter tui.
+# ub2: A `uuid-base64` terminal-based converter.
 ---
 ### Why this project ?
 While working on a project, I needed to convert a UUID to Base64.
@@ -25,8 +25,10 @@ go install github.com/Abhishekkarunakaran/ub2@latest
 
 #### `Homebrew`:
 ```bash
-    brew tap Abhishekkarunakaran/homebrew-publisher
-    brew install ub2
+brew tap Abhishekkarunakaran/homebrew-publisher
+brew install ub2
 ```
+### Note :
+> The converted base64 won't be url safe.
 
 **🤝 Feel free to contribute by ideas, code or anything.**
