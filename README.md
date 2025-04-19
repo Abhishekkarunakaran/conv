@@ -12,15 +12,21 @@ And well, I did just that!!
 ---
 
 ### Demo :
-<img src="./scr_rec.gif" width="500">
+![screen record](scr_rec.gif)
 
 ---
 
 ### Installation :
 
-Using `go`:
+#### `Go`: 
 ```bash
 go install github.com/Abhishekkarunakaran/ub2@latest
+```
+
+#### `Homebrew`:
+```bash
+    brew tap Abhishekkarunakaran/homebrew-publisher
+    brew install ub2
 ```
 
 **🤝 Feel free to contribute by ideas, code or anything.**
