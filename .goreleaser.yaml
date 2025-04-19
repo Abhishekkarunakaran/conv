@@ -51,3 +51,18 @@ release:
     ---
 
     Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
+
+brews:
+  - 
+    name: ub2
+    commit_author:
+      name: Abhishekkarunakaran
+      email: abhishekkarunakaran100@gmail.com
+    license: MIT
+    install: |
+      bin.install "ub2"
+    repository:
+      owner: Abhishekkarunakaran
+      name: homebrew-publisher
+      branch: main
+      token: "{{ .Env.GITHUB_TOKEN }}"
