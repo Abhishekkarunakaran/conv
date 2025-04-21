@@ -17,7 +17,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.width = msg.Width
 	case tea.KeyMsg:
 		switch types.Key(msg.String()) {
-		case types.CtrlC:
+		case types.Esc:
 			return m, tea.Quit
 		case types.Enter:
 			switch {
@@ -26,7 +26,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case m.base64Input.Focused():
 				m.B64ToUuid()
 			}
-		case types.CtrlP:
+		case types.CtrlC:
 			m.CopyToClipboard()
 		case types.Down:
 			m.PressedDownArrowKey()
