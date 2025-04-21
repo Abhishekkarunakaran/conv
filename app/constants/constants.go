@@ -5,13 +5,13 @@ var (
 )
 
 var (
-	LabelUUID =  "   uuid"
-	LabelBase64 =  " base64"
+	LabelUUID     = "   uuid"
+	LabelBase64   = " base64"
 	LabelMesssage = "message"
 )
 
 var (
-	PhUUID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-	PhBase64 = "xxxxxxxxx"
+	PhUUID    = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+	PhBase64  = "xxxxxxxxx"
 	PhMessage = "..."
 )
