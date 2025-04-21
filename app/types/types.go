@@ -22,8 +22,8 @@ type Key string
 var (
 	CtrlC Key = "ctrl+c"
 	Enter Key = "enter"
-	CtrlP Key = "ctrl+p"
 	Down  Key = "down"
 	Up    Key = "up"
 	CtrlL Key = "ctrl+l"
+	Esc Key = "esc"
 )

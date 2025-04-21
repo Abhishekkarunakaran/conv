@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/Abhishekkarunakaran/ub2/app/types"
+	clipboard "github.com/atotto/clipboard"
 	"github.com/gofrs/uuid"
-	clipboard "github.com/tiagomelo/go-clipboard/clipboard"
 )
 
 func (m *model) UuidToB64() {
@@ -66,13 +66,13 @@ func (m *model) CopyToClipboard() {
 }
 
 func (m *model) copy(stringToCopy string) {
-	c := clipboard.New()
+
 	if stringToCopy == "" || len(stringToCopy) == 0 {
 		m.messageLevel = types.Warn
 		m.msgTab.SetValue("trying to copy empty string")
 		return
 	}
-	if err := c.CopyText(stringToCopy); err != nil {
+	if err := clipboard.WriteAll(stringToCopy); err != nil {
 		m.messageLevel = types.Error
 		m.msgTab.SetValue("failed to copy to clipboard")
 	}
@@ -81,7 +81,7 @@ func (m *model) copy(stringToCopy string) {
 }
 
 func (m *model) PressedUpArrowKey() {
-	if m.base64Input.Focused(){
+	if m.base64Input.Focused() {
 		m.base64Input.Blur()
 		m.uuidInput.Focus()
 		m.messageLevel = types.Nil
@@ -89,7 +89,7 @@ func (m *model) PressedUpArrowKey() {
 	}
 }
 
-func (m *model) PressedDownArrowKey(){
+func (m *model) PressedDownArrowKey() {
 	if m.uuidInput.Focused() {
 		m.uuidInput.Blur()
 		m.base64Input.Focus()

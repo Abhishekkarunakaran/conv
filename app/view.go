@@ -22,13 +22,13 @@ func (m model) View() string {
 
 	return lipgloss.JoinVertical(
 		lipgloss.Left,
-	lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Center,
-		lipgloss.JoinVertical(
-			lipgloss.Center,
-			m.renderField(constants.LabelUUID, m.uuidInput, true),
-			m.renderField(constants.LabelBase64, m.base64Input, true),
-			m.renderField(constants.LabelMesssage, m.msgTab, false),
-		)),
+		lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Center,
+			lipgloss.JoinVertical(
+				lipgloss.Center,
+				m.renderField(constants.LabelUUID, m.uuidInput, true),
+				m.renderField(constants.LabelBase64, m.base64Input, true),
+				m.renderField(constants.LabelMesssage, m.msgTab, false),
+			)),
 		helpStyle.Render(constants.HelpString))
 }
 

@@ -1,17 +1,17 @@
 package constants
 
 var (
-	HelpString = "• ↑/↓: select\n• enter: convert\n• ctrl+p: copy to clipboard\n• ctrl+l : clear field\n• ctrl+c: exit"
+	HelpString = "• ↑/↓: select\n• enter: convert\n• ctrl+c: copy to clipboard\n• ctrl+l : clear field\n• esc: exit"
 )
 
 var (
-	LabelUUID =  "   uuid"
-	LabelBase64 =  " base64"
+	LabelUUID     = "   uuid"
+	LabelBase64   = " base64"
 	LabelMesssage = "message"
 )
 
 var (
-	PhUUID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-	PhBase64 = "xxxxxxxxx"
+	PhUUID    = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+	PhBase64  = "xxxxxxxxx"
 	PhMessage = "..."
 )
