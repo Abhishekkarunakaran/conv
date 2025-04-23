@@ -25,5 +25,5 @@ var (
 	Down  Key = "down"
 	Up    Key = "up"
 	CtrlL Key = "ctrl+l"
-	Esc Key = "esc"
+	Esc   Key = "esc"
 )

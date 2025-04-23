@@ -14,22 +14,18 @@ func (m model) Init() tea.Cmd {
 
 func (m model) View() string {
 
-	m.uuidInput.Width = m.width - m.width/10
-	m.base64Input.Width = m.width - m.width/10
-	m.msgTab.Width = m.width - m.width/10
-
 	helpStyle := lipgloss.NewStyle().Foreground(types.HelpGrey).Padding(1, 0, 0, 0)
 
-	return lipgloss.JoinVertical(
-		lipgloss.Left,
-		lipgloss.Place(m.width, m.height, lipgloss.Center, lipgloss.Center,
-			lipgloss.JoinVertical(
-				lipgloss.Center,
-				m.renderField(constants.LabelUUID, m.uuidInput, true),
-				m.renderField(constants.LabelBase64, m.base64Input, true),
-				m.renderField(constants.LabelMesssage, m.msgTab, false),
-			)),
-		helpStyle.Render(constants.HelpString))
+	return lipgloss.Place(
+		m.width, m.height, lipgloss.Center, lipgloss.Center,
+		lipgloss.JoinVertical(
+			lipgloss.Left,
+			m.renderField(constants.LabelUUID, m.uuidInput, true),
+			m.renderField(constants.LabelBase64, m.base64Input, true),
+			m.renderField(constants.LabelMesssage, m.msgTab, false),
+			helpStyle.Render(constants.HelpString),
+		),
+	)
 }
 
 func (m *model) renderField(label string, field textinput.Model, isInputField bool) string {

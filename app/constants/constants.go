@@ -1,7 +1,7 @@
 package constants
 
 var (
-	HelpString = "• ↑/↓: select\n• enter: convert\n• ctrl+c: copy to clipboard\n• ctrl+l : clear field\n• esc: exit"
+	HelpString = "• ↑/↓: select • enter: convert \n• ctrl+c: copy to clipboard • ctrl+l : clear field \n• esc: exit"
 )
 
 var (
