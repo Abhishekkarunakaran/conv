@@ -17,7 +17,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.width = msg.Width
 		m.uuidInput.Width = msg.Width - 20
 		m.base64Input.Width = msg.Width - 20
-		m.msgTab.Width = msg.Width - 20
+		m.msgTab.Width = msg.Width - 9
 	case tea.KeyMsg:
 		switch types.Key(msg.String()) {
 		case types.Esc:

@@ -3,6 +3,7 @@ package util
 import (
 	"github.com/Abhishekkarunakaran/ub2/app/types"
 	"github.com/charmbracelet/bubbles/textinput"
+	"github.com/charmbracelet/bubbles/viewport"
 	"github.com/charmbracelet/lipgloss"
 )
 
@@ -19,12 +20,18 @@ func NewTextInput(charLimit int, placeholder string, focus bool) textinput.Model
 	return tm
 }
 
+func NewViewport(height int) viewport.Model {
+	vp := viewport.New(1, height)
+	return vp
+}
+
 func DefaultStyles() *types.Styles {
 	s := new(types.Styles)
 	s.FocusedColor = types.FocusBlue
 	s.BlurredColor = types.BlurGrey
-	s.InputField = lipgloss.NewStyle().
+	s.InputFieldStyle = lipgloss.NewStyle().
 		BorderStyle(lipgloss.NormalBorder()).Padding(1)
-
+	s.ViewportStyle = lipgloss.NewStyle().
+		BorderStyle(lipgloss.NormalBorder()).Padding(1)
 	return s
 }

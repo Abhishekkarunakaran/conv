@@ -13,5 +13,5 @@ var (
 var (
 	PhUUID    = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 	PhBase64  = "xxxxxxxxx"
-	PhMessage = "..."
+	PhMessage = " ..."
 )
