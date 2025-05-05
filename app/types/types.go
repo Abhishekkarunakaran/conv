@@ -3,9 +3,10 @@ package types
 import "github.com/charmbracelet/lipgloss"
 
 type Styles struct {
-	BlurredColor lipgloss.Color
-	FocusedColor lipgloss.Color
-	InputField   lipgloss.Style
+	BlurredColor    lipgloss.Color
+	FocusedColor    lipgloss.Color
+	InputFieldStyle lipgloss.Style
+	ViewportStyle   lipgloss.Style
 }
 
 type Level string
@@ -25,5 +26,5 @@ var (
 	Down  Key = "down"
 	Up    Key = "up"
 	CtrlL Key = "ctrl+l"
-	Esc Key = "esc"
+	Esc   Key = "esc"
 )
